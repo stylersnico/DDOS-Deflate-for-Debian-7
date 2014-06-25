@@ -5,6 +5,8 @@ A fork of the original DDOS Deflate Project -> http://deflate.medialayer.com/
 
 Fully loaded for Debian 7 Wheezy
 
+For any question : http://www.nicolas-simond.com/ | contact@nicolas-simond.com
+
 
 
 Installation
