@@ -5,9 +5,9 @@ if [ -d '/usr/local/ddos' ]; then
 else
 echo; echo 'Updating DDOS-Deflate'; echo
 echo; echo -n 'Downloading news files...'
-wget -q -O /usr/local/ddos/LICENSE https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-CentOs-6/master/LICENSE
+wget -q -O /usr/local/ddos/LICENSE https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-Debian-7/master/LICENSE
 echo -n '.'
-wget -q -O /usr/local/ddos/ddos.sh https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-CentOs-6/master/ddos.sh
+wget -q -O /usr/local/ddos/ddos.sh https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-Debian-7/master/ddos.sh
 chmod 0755 /usr/local/ddos/ddos.sh
 echo '...done'
 echo; echo 'Update has completed.'
