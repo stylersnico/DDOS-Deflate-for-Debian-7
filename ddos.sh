@@ -46,9 +46,9 @@ showhelp()
 
 unbanip()
 {
-	UNBAN_SCRIPT='mktemp /tmp/unban.XXXXXXXX'
-	TMP_FILE='mktemp /tmp/unban.XXXXXXXX'
-	UNBAN_IP_LIST='mktemp /tmp/unban.XXXXXXXX'
+	UNBAN_SCRIPT=`mktemp /tmp/unban.XXXXXXXX`
+	TMP_FILE=`mktemp /tmp/unban.XXXXXXXX`
+	UNBAN_IP_LIST=`mktemp /tmp/unban.XXXXXXXX`
 	echo '#!/bin/bash' > "$UNBAN_SCRIPT"
 	echo "sleep $BAN_PERIOD" >> "$UNBAN_SCRIPT"
 	if [ "$APF_BAN" -eq 1 ]; then
@@ -107,12 +107,12 @@ while [ "$1" ]; do
 done
 
 TMP_PREFIX='/tmp/ddos'
-TMP_FILE='mktemp $TMP_PREFIX.XXXXXXXX'
-BANNED_IP_MAIL="$TMP_FILE"
-BANNED_IP_LIST="$TMP_FILE"
+TMP_FILE="mktemp $TMP_PREFIX.XXXXXXXX"
+BANNED_IP_MAIL=`$TMP_FILE`
+BANNED_IP_LIST=`$TMP_FILE`
 echo "Banned the following ip addresses on date" > "$BANNED_IP_MAIL"
 echo >>	"$BANNED_IP_MAIL"
-BAD_IP_LIST="$TMP_FILE"
+BAD_IP_LIST=`$TMP_FILE`
 netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr > "$BAD_IP_LIST"
 cat "$BAD_IP_LIST"
 if [ $KILL -eq 1 ]; then
