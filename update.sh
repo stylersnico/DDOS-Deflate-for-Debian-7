@@ -3,7 +3,6 @@ if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
    exit 1
 fi
-else
 echo; echo 'Updating DDOS-Deflate'; echo
 echo; echo -n 'Downloading news files...'
 wget -q -O /usr/local/ddos/LICENSE https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-Debian-7/master/LICENSE
