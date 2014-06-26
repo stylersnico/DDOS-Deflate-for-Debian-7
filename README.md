@@ -31,3 +31,9 @@ Uninstallation
 ==============
 
 wget -O- https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-Debian-7/master/uninstall.sh | sh
+
+
+If you like my work pay me a beer :)
+====================================
+
+http://goo.gl/sBZbpU
