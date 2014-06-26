@@ -17,10 +17,16 @@ echo -n '.'
 wget -q -O /usr/local/ddos/ddos.sh https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-Debian-7/master/ddos.sh
 chmod 0755 /usr/local/ddos/ddos.sh
 cp -s /usr/local/ddos/ddos.sh /usr/local/sbin/ddos
+echo -n '.'
+wget -q -O /usr/local/ddos/update.sh https://raw.githubusercontent.com/stylersnico/DDOS-Deflate-for-Debian-7/master/update.sh
+chmod 0755 /usr/local/ddos/update.sh
 echo '...done'
 
 echo; echo -n 'Creating cron to run script every minute.....(Default setting)'
 /usr/local/ddos/ddos.sh -c
+echo '.....done'
+echo; echo -n 'Creating cron to update scrit each month'
+crontab -l | { cat; echo "30 12 1-7 * 7 /usr/local/ddos/update.sh >> /var/log/deflate-update.log"; } | crontab -
 echo '.....done'
 echo; echo 'Installation has completed.'
 echo 'Config file is at /usr/local/ddos/ddos.conf'
