@@ -14,6 +14,12 @@ jessie/sid
 
 
 
+Full Tutorial
+=============
+
+http://www.abyssproject.net/2014/06/installer-ddos-deflate-debian-7/
+
+
 Installation
 ============
 
