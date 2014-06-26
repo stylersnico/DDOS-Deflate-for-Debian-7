@@ -43,8 +43,8 @@ You can disable it in crontab -e
 You can run the script with : /usr/local/ddos/update.sh
 
 
-Log
-===
+Logs
+====
 
 DDOS Deflate log : /var/log/deflate.log
 
