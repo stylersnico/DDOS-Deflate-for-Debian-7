@@ -1,7 +1,8 @@
 #!/bin/bash
-if [ -d '/usr/local/ddos' ]; then
-	echo; echo; echo "Please un-install the previous version first"
-	exit 0
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
 else
 echo; echo 'Updating DDOS-Deflate'; echo
 echo; echo -n 'Downloading news files...'
