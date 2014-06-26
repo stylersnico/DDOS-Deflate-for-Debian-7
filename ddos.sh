@@ -113,7 +113,7 @@ BANNED_IP_LIST=`$TMP_FILE`
 echo "Banned the following ip addresses on `date`" > $BANNED_IP_MAIL
 echo >>	$BANNED_IP_MAIL
 BAD_IP_LIST=`$TMP_FILE`
-netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr > $BAD_IP_LIST
+netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | grep -v -e server -e Address -e 127.0.0.1 -e 0.0.0.0 > $BAD_IP_LIST
 cat $BAD_IP_LIST
 if [ $KILL -eq 1 ]; then
 	IP_BAN_NOW=0
