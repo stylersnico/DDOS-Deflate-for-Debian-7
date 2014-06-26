@@ -8,6 +8,11 @@ Fully loaded for Debian 7 Wheezy
 For any question : http://www.nicolas-simond.com/ | contact@nicolas-simond.com
 
 
+Also work on unstable Debian Jessie
+jessie/sid
+3.14-1-amd64
+
+
 
 Installation
 ============
