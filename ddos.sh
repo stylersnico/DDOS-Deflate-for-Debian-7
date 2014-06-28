@@ -5,7 +5,7 @@
 #!/bin/bash
 ##############################################################################
 # DDoS-Deflate version 0.6 Author: Zaf <zaf@vsnl.com>                        #
-# Version 1.0 Wheezy Author: Nicolas Simond <contact@nicolas-simond.com>     #                     
+# Version 2.0 Wheezy Author: Nicolas Simond <contact@nicolas-simond.com>     #                     
 ##############################################################################
 # This program is distributed under the "Artistic License" Agreement         #
 #                                                                            #
@@ -26,9 +26,9 @@ load_conf()
 
 head()
 {
-	echo "DDoS-Deflate version 0.6 + Mod 1.0 Wheezy"
+	echo "DDoS-Deflate version 0.6 + Mod 2.0 Wheezy"
 	echo "Copyright (C) 2005, Zaf <zaf@vsnl.com>"
-	echo "+MOD 1.0 Wheezy"
+	echo "+MOD 2.0 Wheezy"
 	echo "Copyright (C) 2014, Nicolas Simond <contact@nicolas-simond.com>"
 	echo
 }
@@ -113,7 +113,13 @@ BANNED_IP_LIST=`$TMP_FILE`
 echo "Banned the following ip addresses on `date`" > $BANNED_IP_MAIL
 echo >>	$BANNED_IP_MAIL
 BAD_IP_LIST=`$TMP_FILE`
-netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | grep -v -e server -e Address -e 127.0.0.1 -e 0.0.0.0 > $BAD_IP_LIST
+
+#WHITELIST LOAD
+WHITE_LIST=/usr/local/ddos/white.list
+
+#NETSTAT CMD
+netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | $WHITE_LIST > $BAD_IP_LIST
+
 cat $BAD_IP_LIST
 if [ $KILL -eq 1 ]; then
 	IP_BAN_NOW=0
